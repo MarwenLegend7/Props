@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import { Profile } from './profile/profile';
+import cat from "./cat.jpg"
+const App = () => {
+  
+  const fullname =  "Marwen Aouinti"
+  const bio =  "Unknown"
+  const profession =  "Student"
+  const hundlename = (fullname) => {
+    alert(`Profile name : ${fullname}`)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App' >
+      <Profile fullname={fullname} bio={bio} profession={profession}  >
+        <img style={{
+          width: "300px",
+          height:"300px"
+        }} src={cat} alt="cat" />
+        <div>
+          <button type='button' onClick={()=>{hundlename(fullname)}} >Profile Name</button>
+        </div>
+      </Profile>
     </div>
   );
 }
